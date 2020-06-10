@@ -1,0 +1,81 @@
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o dtls.o dtls.c
+dtls.c: In function ¡®check_client_certificate_verify¡¯:
+dtls.c:1772:49: warning: unused parameter ¡®ctx¡¯ [-Wunused-parameter]
+ check_client_certificate_verify(dtls_context_t *ctx,
+                                                 ^~~
+In file included from utlist.h:29:0,
+                 from dtls.c:44:
+dtls.c: In function ¡®dtls_send_certificate_ecdsa¡¯:
+dtls.c:1941:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(p - buf <= sizeof(buf));
+                  ^
+dtls.c: In function ¡®dtls_send_server_key_exchange_ecdh¡¯:
+dtls.c:2061:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(p - buf <= sizeof(buf));
+                  ^
+dtls.c: In function ¡®dtls_send_server_certificate_request¡¯:
+dtls.c:2134:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(p - buf <= sizeof(buf));
+                  ^
+dtls.c: In function ¡®dtls_send_certificate_verify_ecdh¡¯:
+dtls.c:2369:18: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   assert(p - buf <= sizeof(buf));
+                  ^
+dtls.c: In function ¡®check_server_key_exchange_ecdsa¡¯:
+dtls.c:2699:49: warning: unused parameter ¡®ctx¡¯ [-Wunused-parameter]
+ check_server_key_exchange_ecdsa(dtls_context_t *ctx,
+                                                 ^~~
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o crypto.o crypto.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o ccm.o ccm.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o hmac.o hmac.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o netq.o netq.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o peer.o peer.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o dtls_time.o dtls_time.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o session.o session.c
+gcc -Wall -pedantic -std=c99 -g -O2 -pedantic -Wall -Wextra -Wformat-security -Winline -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wshadow -Wstrict-prototypes -Wswitch-default -Wswitch-enum -Wunused  -DDTLSv12 -DWITH_SHA256 -DDTLS_CHECK_CONTENTTYPE -I.  -c -o dtls_debug.o dtls_debug.c
+make -C aes rijndael.o
+make[1]: Entering directory '/home/user/work/tinydtls-master/aes'
+gcc -Wall -std=c99 -pedantic -g -O2 -DDTLSv12 -DWITH_SHA256  -c -o rijndael.o rijndael.c
+make[1]: Leaving directory '/home/user/work/tinydtls-master/aes'
+make -C ecc ecc.o
+make[1]: Entering directory '/home/user/work/tinydtls-master/ecc'
+gcc -Wall -std=c99 -pedantic -g -O2 -DTEST_INCLUDE -DDTLSv12 -DWITH_SHA256  -c -o ecc.o ecc.c
+make[1]: Leaving directory '/home/user/work/tinydtls-master/ecc'
+make -C sha2 sha2.o
+make[1]: Entering directory '/home/user/work/tinydtls-master/sha2'
+gcc -Wall -std=c99 -pedantic -g -O2 -DDTLSv12 -DWITH_SHA256 -I..  -c -o sha2.o sha2.c
+make[1]: Leaving directory '/home/user/work/tinydtls-master/sha2'
+ar cru libtinydtls.a dtls.o crypto.o ccm.o hmac.o netq.o peer.o dtls_time.o session.o dtls_debug.o aes/rijndael.o ecc/ecc.o sha2/sha2.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libtinydtls.a
+make -C doc
+make[1]: Entering directory '/home/user/work/tinydtls-master/doc'
+: Doxyfile >./doxygen.out 2>&1 
+make[1]: Leaving directory '/home/user/work/tinydtls-master/doc'
+for dir in tests doc platform-specific sha2 aes ecc; do \
+    make -C $dir ; \
+done
+make[1]: Entering directory '/home/user/work/tinydtls-master/tests'
+gcc -Wall -g -O2  -I..  -DDTLSv12 -DWITH_SHA256 -L..   dtls-server.c  -ltinydtls  -o dtls-server
+gcc -Wall -g -O2  -I..  -DDTLSv12 -DWITH_SHA256 -L..   ccm-test.c  -ltinydtls  -o ccm-test
+gcc -Wall -g -O2  -I..  -DDTLSv12 -DWITH_SHA256 -L..   prf-test.c  -ltinydtls  -o prf-test
+gcc -Wall -g -O2  -I..  -DDTLSv12 -DWITH_SHA256 -L..   dtls-client.c  -ltinydtls  -o dtls-client
+make[1]: Leaving directory '/home/user/work/tinydtls-master/tests'
+make[1]: Entering directory '/home/user/work/tinydtls-master/doc'
+: Doxyfile >./doxygen.out 2>&1 
+make[1]: Leaving directory '/home/user/work/tinydtls-master/doc'
+make[1]: Entering directory '/home/user/work/tinydtls-master/platform-specific'
+make[1]: Nothing to be done for 'clean'.
+make[1]: Leaving directory '/home/user/work/tinydtls-master/platform-specific'
+make[1]: Entering directory '/home/user/work/tinydtls-master/sha2'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/work/tinydtls-master/sha2'
+make[1]: Entering directory '/home/user/work/tinydtls-master/aes'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/user/work/tinydtls-master/aes'
+make[1]: Entering directory '/home/user/work/tinydtls-master/ecc'
+gcc -Wall -std=c99 -pedantic -g -O2 -DTEST_INCLUDE -DDTLSv12 -DWITH_SHA256  -c -o ecc_test.o ecc.c
+gcc -Wall -std=c99 -pedantic -g -O2 -DTEST_INCLUDE -DDTLSv12 -DWITH_SHA256  -c -o test_helper.o test_helper.c
+gcc -Wall -std=c99 -pedantic -g -O2 -DTEST_INCLUDE -DDTLSv12 -DWITH_SHA256   testecc.c ecc_test.o test_helper.o   -o testecc
+gcc -Wall -std=c99 -pedantic -g -O2 -DTEST_INCLUDE -DDTLSv12 -DWITH_SHA256   testfield.c ecc_test.o test_helper.o   -o testfield
+make[1]: Leaving directory '/home/user/work/tinydtls-master/ecc'
